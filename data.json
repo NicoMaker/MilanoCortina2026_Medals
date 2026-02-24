@@ -14,6 +14,7 @@
     },
     {
       "country": "Stati Uniti",
+      "shortName": "USA",
       "code": "US",
       "emoji": "🇺🇸",
       "gold": 12,
@@ -22,6 +23,7 @@
     },
     {
       "country": "Paesi Bassi",
+      "shortName": "P. Bassi",
       "code": "NL",
       "emoji": "🇳🇱",
       "gold": 10,
@@ -102,6 +104,7 @@
     },
     {
       "country": "Corea del Sud",
+      "shortName": "Corea S.",
       "code": "KR",
       "emoji": "🇰🇷",
       "gold": 3,
@@ -118,6 +121,7 @@
     },
     {
       "country": "Gran Bretagna",
+      "shortName": "Gran Bret.",
       "code": "GB",
       "emoji": "🇬🇧",
       "gold": 3,
@@ -126,6 +130,7 @@
     },
     {
       "country": "Repubblica Ceca",
+      "shortName": "Rep. Ceca",
       "code": "CZ",
       "emoji": "🇨🇿",
       "gold": 2,
@@ -174,6 +179,7 @@
     },
     {
       "country": "Nuova Zelanda",
+      "shortName": "N. Zelanda",
       "code": "NZ",
       "emoji": "🇳🇿",
       "gold": 0,

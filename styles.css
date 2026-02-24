@@ -450,6 +450,9 @@ h1 {
   font-weight: 500;
   font-size: 0.9rem;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
 }
 
 .cmeta {

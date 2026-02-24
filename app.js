@@ -21,6 +21,7 @@ async function init() {
     state.nations = json.nations.map((n) => ({
       ...n,
       total: n.gold + n.silver + n.bronze,
+      displayName: n.shortName || n.country,
       flagUrl: "https://flagcdn.com/w80/" + n.code.toLowerCase() + ".png",
     }));
 
@@ -156,7 +157,7 @@ function buildRow(n, i, maxTotal) {
     '<div class="cname">' +
     n.emoji +
     " " +
-    n.country +
+    n.displayName +
     "</div>" +
     '<div class="cmeta">' +
     '<span class="ccode">' +
