@@ -8,7 +8,7 @@ const DATA_URL = './data.json';
 // ── STATE ──────────────────────────────────
 let state = {
   nations: [],
-  sort: 'total',    // 'total' | 'gold' | 'silver' | 'bronze'
+  sort: 'gold',    // 'total' | 'gold' | 'silver' | 'bronze' | 'alpha'
   query: '',
   meta: {}
 };
@@ -77,6 +77,8 @@ function sorted(nations) {
       return arr.sort((a, b) => b.silver - a.silver || b.gold - a.gold || b.bronze - a.bronze || b.total - a.total);
     case 'bronze':
       return arr.sort((a, b) => b.bronze - a.bronze || b.gold - a.gold || b.silver - a.silver || b.total - a.total);
+    case 'alpha':
+      return arr.sort((a, b) => a.country.localeCompare(b.country, 'it'));
     default: // total
       return arr.sort((a, b) => b.total - a.total || b.gold - a.gold || b.silver - a.silver);
   }
@@ -113,7 +115,7 @@ function render() {
 function buildRow(n, i, maxTotal) {
   const rank     = i + 1;
   const isPodium = rank <= 3 && !state.query;
-  const isHost   = n.code === 'IT';
+  const isHost   = false; // rimosso highlight speciale per l'Italia
 
   // Medal bar widths (proportional to maxTotal)
   const scale = 100 / maxTotal;
@@ -123,7 +125,7 @@ function buildRow(n, i, maxTotal) {
 
   const medal = (val, cls) => val > 0
     ? `<span class="${cls}">${val}</span>`
-    : `<span class="zero">—</span>`;
+    : `<span class="zero">0</span>`;
 
   return `
   <div class="row${isHost ? ' host-nation' : ''}" style="animation-delay:${Math.min(i * 0.03, 0.6)}s">

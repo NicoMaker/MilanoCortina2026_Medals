@@ -205,12 +205,14 @@ h1 {
 .sort-btn.active[data-sort="gold"]   { background: var(--gold);   color: #111; }
 .sort-btn.active[data-sort="silver"] { background: var(--silver); color: #111; }
 .sort-btn.active[data-sort="bronze"] { background: var(--bronze); }
+.sort-btn.active[data-sort="alpha"]  { background: #7c3aed; color: #fff; }
 
 .dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
 .dot-gold   { background: var(--gold);   }
 .dot-silver { background: var(--silver); }
 .dot-bronze { background: var(--bronze); }
 .dot-total  { background: var(--accent); }
+.dot-alpha  { background: #a78bfa; }
 
 .search-wrap { margin-left: auto; }
 
@@ -267,8 +269,6 @@ h1 {
 }
 .row:last-child    { border-bottom: none; }
 .row:hover         { background: var(--surface2); }
-.row.host-nation   { background: var(--host); border-left: 2px solid var(--host-bd); }
-.row.host-nation:hover { background: rgba(0,200,100,0.18); }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(8px); }
