@@ -1,147 +1,311 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Medagliere – Milano Cortina 2026</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Medagliere Olimpico · Milano Cortina 2026 · 6–22 febbraio 2026
+    </title>
 
-  <!-- Favicon ufficiale Milano Cortina 2026 -->
-  <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/2026_Winter_Olympics_logo.svg/120px-2026_Winter_Olympics_logo.svg.png">
+    <!-- Favicon olimpica (emoji 🏅) -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏅</text></svg>"
+    />
 
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- ══ HERO HEADER ══ -->
+      <header class="hero">
+        <div class="hero-bg"></div>
 
-<div class="page">
+        <!-- Logo ufficiale come immagine -->
+        <div class="hero-logo">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/2026_Winter_Olympics_logo.svg/300px-2026_Winter_Olympics_logo.svg.png"
+            alt="Milano Cortina 2026"
+            class="logo-img"
+            onerror="this.style.display = 'none'"
+          />
+        </div>
 
-  <!-- ══ HERO HEADER ══ -->
-  <header class="hero">
-    <div class="hero-bg"></div>
+        <div class="hero-text">
+          <h1>Medagliere Olimpico</h1>
+          <p class="tagline" id="event-meta">
+            XXV Giochi Olimpici Invernali · Milano Cortina 2026 · 6–22 febbraio
+            2026
+          </p>
+        </div>
 
-    <!-- Logo ufficiale come immagine -->
-    <div class="hero-logo">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/2026_Winter_Olympics_logo.svg/300px-2026_Winter_Olympics_logo.svg.png"
-        alt="Milano Cortina 2026"
-        class="logo-img"
-        onerror="this.style.display='none'">
+        <!-- Fiocco di neve decorativo SVG -->
+        <svg
+          class="deco-snow"
+          viewBox="0 0 120 120"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="60"
+            y1="6"
+            x2="60"
+            y2="114"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="round"
+            opacity=".3"
+          />
+          <line
+            x1="6"
+            y1="60"
+            x2="114"
+            y2="60"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="round"
+            opacity=".3"
+          />
+          <line
+            x1="18"
+            y1="18"
+            x2="102"
+            y2="102"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="round"
+            opacity=".3"
+          />
+          <line
+            x1="102"
+            y1="18"
+            x2="18"
+            y2="102"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="round"
+            opacity=".3"
+          />
+          <line
+            x1="60"
+            y1="22"
+            x2="46"
+            y2="36"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            opacity=".5"
+          />
+          <line
+            x1="60"
+            y1="22"
+            x2="74"
+            y2="36"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            opacity=".5"
+          />
+          <line
+            x1="60"
+            y1="98"
+            x2="46"
+            y2="84"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            opacity=".5"
+          />
+          <line
+            x1="60"
+            y1="98"
+            x2="74"
+            y2="84"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            opacity=".5"
+          />
+          <line
+            x1="22"
+            y1="60"
+            x2="36"
+            y2="46"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            opacity=".5"
+          />
+          <line
+            x1="22"
+            y1="60"
+            x2="36"
+            y2="74"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            opacity=".5"
+          />
+          <line
+            x1="98"
+            y1="60"
+            x2="84"
+            y2="46"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            opacity=".5"
+          />
+          <line
+            x1="98"
+            y1="60"
+            x2="84"
+            y2="74"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            opacity=".5"
+          />
+          <circle cx="60" cy="60" r="8" fill="white" opacity=".5" />
+          <circle cx="60" cy="6" r="4" fill="#f5c842" />
+          <circle cx="60" cy="114" r="4" fill="#f5c842" />
+          <circle cx="6" cy="60" r="4" fill="#f5c842" />
+          <circle cx="114" cy="60" r="4" fill="#f5c842" />
+          <circle cx="18" cy="18" r="4" fill="#f5c842" />
+          <circle cx="102" cy="102" r="4" fill="#f5c842" />
+          <circle cx="102" cy="18" r="4" fill="#f5c842" />
+          <circle cx="18" cy="102" r="4" fill="#f5c842" />
+        </svg>
+      </header>
+
+      <main class="container">
+        <!-- ══ SUMMARY CARDS ══ -->
+        <div class="summary">
+          <div class="card gold">
+            <div class="card-icon">🥇</div>
+            <div class="card-num" id="sum-gold">—</div>
+            <div class="card-lbl">Ori Assegnati</div>
+          </div>
+          <div class="card silver">
+            <div class="card-icon">🥈</div>
+            <div class="card-num" id="sum-silver">—</div>
+            <div class="card-lbl">Argenti</div>
+          </div>
+          <div class="card bronze">
+            <div class="card-icon">🥉</div>
+            <div class="card-num" id="sum-bronze">—</div>
+            <div class="card-lbl">Bronzi</div>
+          </div>
+          <div class="card nations">
+            <div class="card-icon">🌍</div>
+            <div class="card-num" id="sum-nations">—</div>
+            <div class="card-lbl">Nazioni</div>
+          </div>
+        </div>
+
+        <!-- ══ CONTROLLI ══ -->
+        <div class="controls">
+          <div class="sort-group">
+            <span class="ctrl-lbl">Ordina:</span>
+            <button
+              class="sort-btn"
+              data-sort="total"
+              onclick="setSort('total')"
+            >
+              Totale
+            </button>
+            <button
+              class="sort-btn active"
+              data-sort="gold"
+              onclick="setSort('gold')"
+            >
+              🥇 Oro
+            </button>
+            <button
+              class="sort-btn"
+              data-sort="silver"
+              onclick="setSort('silver')"
+            >
+              🥈 Argento
+            </button>
+            <button
+              class="sort-btn"
+              data-sort="bronze"
+              onclick="setSort('bronze')"
+            >
+              🥉 Bronzo
+            </button>
+            <button
+              class="sort-btn"
+              data-sort="alpha"
+              onclick="setSort('alpha')"
+            >
+              A–Z
+            </button>
+          </div>
+          <div class="search-wrap">
+            <input
+              class="search-input"
+              type="search"
+              placeholder="🔍 Cerca nazione…"
+              oninput="onSearch(event)"
+            />
+          </div>
+        </div>
+
+        <!-- ══ TABELLA ══ -->
+        <!-- Su mobile: la tabella scrolla orizzontalmente, la legenda rimane fissa -->
+        <div class="table-outer">
+          <div class="table-scroll">
+            <table class="medal-table">
+              <thead>
+                <tr>
+                  <th class="th-rank">#</th>
+                  <th class="th-country">Squadra</th>
+                  <th class="th-med cg" onclick="setSort('gold')">🥇 Oro</th>
+                  <th class="th-med cs" onclick="setSort('silver')">🥈 Arg.</th>
+                  <th class="th-med cb" onclick="setSort('bronze')">🥉 Bro.</th>
+                  <th class="th-med" onclick="setSort('total')">Tot.</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                <tr>
+                  <td colspan="6" class="no-results">Caricamento…</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Legenda fissa sotto la tabella su mobile -->
+          <div class="mobile-legend">
+            <span class="leg-item"><span class="leg-dot lg"></span>🥇 Oro</span>
+            <span class="leg-item"
+              ><span class="leg-dot ls"></span>🥈 Argento</span
+            >
+            <span class="leg-item"
+              ><span class="leg-dot lb"></span>🥉 Bronzo</span
+            >
+            <span class="leg-item"><strong>Tot</strong> = Totale medaglie</span>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>Dati finali ufficiali · Fonte: IOC / Olympics.com</p>
+        <p>
+          XXV Giochi Olimpici Invernali · Milano &amp; Cortina d'Ampezzo · 6–22
+          febbraio 2026
+        </p>
+      </footer>
     </div>
 
-    <div class="hero-text">
-      <h1>Medagliere Olimpico</h1>
-      <p class="tagline" id="event-meta">XXV Giochi Olimpici Invernali · Milano Cortina 2026</p>
-    </div>
-
-    <!-- Fiocco di neve decorativo SVG -->
-    <svg class="deco-snow" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="60" y1="6"  x2="60" y2="114" stroke="white" stroke-width="3" stroke-linecap="round" opacity=".3"/>
-      <line x1="6"  y1="60" x2="114" y2="60" stroke="white" stroke-width="3" stroke-linecap="round" opacity=".3"/>
-      <line x1="18" y1="18" x2="102" y2="102" stroke="white" stroke-width="3" stroke-linecap="round" opacity=".3"/>
-      <line x1="102" y1="18" x2="18" y2="102" stroke="white" stroke-width="3" stroke-linecap="round" opacity=".3"/>
-      <line x1="60" y1="22" x2="46" y2="36" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-      <line x1="60" y1="22" x2="74" y2="36" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-      <line x1="60" y1="98" x2="46" y2="84" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-      <line x1="60" y1="98" x2="74" y2="84" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-      <line x1="22" y1="60" x2="36" y2="46" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-      <line x1="22" y1="60" x2="36" y2="74" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-      <line x1="98" y1="60" x2="84" y2="46" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-      <line x1="98" y1="60" x2="84" y2="74" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-      <circle cx="60" cy="60" r="8" fill="white" opacity=".5"/>
-      <circle cx="60" cy="6"   r="4" fill="#f5c842"/>
-      <circle cx="60" cy="114" r="4" fill="#f5c842"/>
-      <circle cx="6"  cy="60"  r="4" fill="#f5c842"/>
-      <circle cx="114" cy="60" r="4" fill="#f5c842"/>
-      <circle cx="18" cy="18"  r="4" fill="#f5c842"/>
-      <circle cx="102" cy="102" r="4" fill="#f5c842"/>
-      <circle cx="102" cy="18" r="4" fill="#f5c842"/>
-      <circle cx="18" cy="102" r="4" fill="#f5c842"/>
-    </svg>
-  </header>
-
-  <main class="container">
-
-    <!-- ══ SUMMARY CARDS ══ -->
-    <div class="summary">
-      <div class="card gold">
-        <div class="card-icon">🥇</div>
-        <div class="card-num" id="sum-gold">—</div>
-        <div class="card-lbl">Ori Assegnati</div>
-      </div>
-      <div class="card silver">
-        <div class="card-icon">🥈</div>
-        <div class="card-num" id="sum-silver">—</div>
-        <div class="card-lbl">Argenti</div>
-      </div>
-      <div class="card bronze">
-        <div class="card-icon">🥉</div>
-        <div class="card-num" id="sum-bronze">—</div>
-        <div class="card-lbl">Bronzi</div>
-      </div>
-      <div class="card nations">
-        <div class="card-icon">🌍</div>
-        <div class="card-num" id="sum-nations">—</div>
-        <div class="card-lbl">Nazioni</div>
-      </div>
-    </div>
-
-    <!-- ══ CONTROLLI ══ -->
-    <div class="controls">
-      <div class="sort-group">
-        <span class="ctrl-lbl">Ordina:</span>
-        <button class="sort-btn" data-sort="total"  onclick="setSort('total')">Totale</button>
-        <button class="sort-btn active" data-sort="gold"   onclick="setSort('gold')">🥇 Oro</button>
-        <button class="sort-btn" data-sort="silver" onclick="setSort('silver')">🥈 Argento</button>
-        <button class="sort-btn" data-sort="bronze" onclick="setSort('bronze')">🥉 Bronzo</button>
-        <button class="sort-btn" data-sort="alpha"  onclick="setSort('alpha')">A–Z</button>
-      </div>
-      <div class="search-wrap">
-        <input class="search-input" type="search" placeholder="🔍 Cerca nazione…" oninput="onSearch(event)">
-      </div>
-    </div>
-
-    <!-- ══ TABELLA ══ -->
-    <!-- Su mobile: la tabella scrolla orizzontalmente, la legenda rimane fissa -->
-    <div class="table-outer">
-      <div class="table-scroll">
-        <table class="medal-table">
-          <thead>
-            <tr>
-              <th class="th-rank">#</th>
-              <th class="th-country">Squadra</th>
-              <th class="th-med cg" onclick="setSort('gold')">🥇 Oro</th>
-              <th class="th-med cs" onclick="setSort('silver')">🥈 Arg.</th>
-              <th class="th-med cb" onclick="setSort('bronze')">🥉 Bro.</th>
-              <th class="th-med" onclick="setSort('total')">Tot.</th>
-            </tr>
-          </thead>
-          <tbody id="table-body">
-            <tr><td colspan="6" class="no-results">Caricamento…</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Legenda fissa sotto la tabella su mobile -->
-      <div class="mobile-legend">
-        <span class="leg-item"><span class="leg-dot lg"></span>🥇 Oro</span>
-        <span class="leg-item"><span class="leg-dot ls"></span>🥈 Argento</span>
-        <span class="leg-item"><span class="leg-dot lb"></span>🥉 Bronzo</span>
-        <span class="leg-item"><strong>Tot</strong> = Totale medaglie</span>
-      </div>
-    </div>
-
-  </main>
-
-  <footer>
-    <p>Dati finali ufficiali · Fonte: IOC / Olympics.com</p>
-    <p>XXV Giochi Olimpici Invernali · Milano &amp; Cortina d'Ampezzo · 6–22 febbraio 2026</p>
-  </footer>
-
-</div>
-
-<script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>

@@ -4,34 +4,237 @@
   "year": 2026,
   "dates": "6–22 febbraio 2026",
   "nations": [
-    { "country": "Norvegia",        "code": "NO", "emoji": "🇳🇴", "gold": 18, "silver": 12, "bronze": 11 },
-    { "country": "Stati Uniti",     "code": "US", "emoji": "🇺🇸", "gold": 12, "silver": 12, "bronze": 9  },
-    { "country": "Paesi Bassi",     "code": "NL", "emoji": "🇳🇱", "gold": 10, "silver": 7,  "bronze": 3  },
-    { "country": "Italia",          "code": "IT", "emoji": "🇮🇹", "gold": 10, "silver": 6,  "bronze": 14 },
-    { "country": "Germania",        "code": "DE", "emoji": "🇩🇪", "gold": 8,  "silver": 10, "bronze": 8  },
-    { "country": "Francia",         "code": "FR", "emoji": "🇫🇷", "gold": 8,  "silver": 9,  "bronze": 6  },
-    { "country": "Svezia",          "code": "SE", "emoji": "🇸🇪", "gold": 8,  "silver": 6,  "bronze": 4  },
-    { "country": "Svizzera",        "code": "CH", "emoji": "🇨🇭", "gold": 6,  "silver": 9,  "bronze": 8  },
-    { "country": "Austria",         "code": "AT", "emoji": "🇦🇹", "gold": 5,  "silver": 8,  "bronze": 5  },
-    { "country": "Giappone",        "code": "JP", "emoji": "🇯🇵", "gold": 5,  "silver": 7,  "bronze": 12 },
-    { "country": "Canada",          "code": "CA", "emoji": "🇨🇦", "gold": 5,  "silver": 7,  "bronze": 9  },
-    { "country": "Cina",            "code": "CN", "emoji": "🇨🇳", "gold": 5,  "silver": 4,  "bronze": 6  },
-    { "country": "Corea del Sud",   "code": "KR", "emoji": "🇰🇷", "gold": 3,  "silver": 4,  "bronze": 3  },
-    { "country": "Australia",       "code": "AU", "emoji": "🇦🇺", "gold": 3,  "silver": 2,  "bronze": 1  },
-    { "country": "Gran Bretagna",   "code": "GB", "emoji": "🇬🇧", "gold": 3,  "silver": 1,  "bronze": 1  },
-    { "country": "Repubblica Ceca", "code": "CZ", "emoji": "🇨🇿", "gold": 2,  "silver": 2,  "bronze": 1  },
-    { "country": "Slovenia",        "code": "SI", "emoji": "🇸🇮", "gold": 2,  "silver": 1,  "bronze": 1  },
-    { "country": "Spagna",          "code": "ES", "emoji": "🇪🇸", "gold": 1,  "silver": 0,  "bronze": 2  },
-    { "country": "Brasile",         "code": "BR", "emoji": "🇧🇷", "gold": 1,  "silver": 0,  "bronze": 2  },
-    { "country": "Kazakhstan",      "code": "KZ", "emoji": "🇰🇿", "gold": 1,  "silver": 0,  "bronze": 0  },
-    { "country": "Polonia",         "code": "PL", "emoji": "🇵🇱", "gold": 0,  "silver": 3,  "bronze": 1  },
-    { "country": "Nuova Zelanda",   "code": "NZ", "emoji": "🇳🇿", "gold": 0,  "silver": 2,  "bronze": 1  },
-    { "country": "Lettonia",        "code": "LV", "emoji": "🇱🇻", "gold": 0,  "silver": 1,  "bronze": 1  },
-    { "country": "Georgia",         "code": "GE", "emoji": "🇬🇪", "gold": 0,  "silver": 1,  "bronze": 0  },
-    { "country": "Finlandia",       "code": "FI", "emoji": "🇫🇮", "gold": 0,  "silver": 1,  "bronze": 4  },
-    { "country": "Danimarca",       "code": "DK", "emoji": "🇩🇰", "gold": 0,  "silver": 1,  "bronze": 0  },
-    { "country": "Estonia",         "code": "EE", "emoji": "🇪🇪", "gold": 0,  "silver": 1,  "bronze": 0  },
-    { "country": "Bulgaria",        "code": "BG", "emoji": "🇧🇬", "gold": 0,  "silver": 0,  "bronze": 2  },
-    { "country": "Belgio",          "code": "BE", "emoji": "🇧🇪", "gold": 0,  "silver": 0,  "bronze": 1  }
+    {
+      "country": "Norvegia",
+      "code": "NO",
+      "emoji": "🇳🇴",
+      "gold": 18,
+      "silver": 12,
+      "bronze": 11
+    },
+    {
+      "country": "Stati Uniti",
+      "code": "US",
+      "emoji": "🇺🇸",
+      "gold": 12,
+      "silver": 12,
+      "bronze": 9
+    },
+    {
+      "country": "Paesi Bassi",
+      "code": "NL",
+      "emoji": "🇳🇱",
+      "gold": 10,
+      "silver": 7,
+      "bronze": 3
+    },
+    {
+      "country": "Italia",
+      "code": "IT",
+      "emoji": "🇮🇹",
+      "gold": 10,
+      "silver": 6,
+      "bronze": 14
+    },
+    {
+      "country": "Germania",
+      "code": "DE",
+      "emoji": "🇩🇪",
+      "gold": 8,
+      "silver": 10,
+      "bronze": 8
+    },
+    {
+      "country": "Francia",
+      "code": "FR",
+      "emoji": "🇫🇷",
+      "gold": 8,
+      "silver": 9,
+      "bronze": 6
+    },
+    {
+      "country": "Svezia",
+      "code": "SE",
+      "emoji": "🇸🇪",
+      "gold": 8,
+      "silver": 6,
+      "bronze": 4
+    },
+    {
+      "country": "Svizzera",
+      "code": "CH",
+      "emoji": "🇨🇭",
+      "gold": 6,
+      "silver": 9,
+      "bronze": 8
+    },
+    {
+      "country": "Austria",
+      "code": "AT",
+      "emoji": "🇦🇹",
+      "gold": 5,
+      "silver": 8,
+      "bronze": 5
+    },
+    {
+      "country": "Giappone",
+      "code": "JP",
+      "emoji": "🇯🇵",
+      "gold": 5,
+      "silver": 7,
+      "bronze": 12
+    },
+    {
+      "country": "Canada",
+      "code": "CA",
+      "emoji": "🇨🇦",
+      "gold": 5,
+      "silver": 7,
+      "bronze": 9
+    },
+    {
+      "country": "Cina",
+      "code": "CN",
+      "emoji": "🇨🇳",
+      "gold": 5,
+      "silver": 4,
+      "bronze": 6
+    },
+    {
+      "country": "Corea del Sud",
+      "code": "KR",
+      "emoji": "🇰🇷",
+      "gold": 3,
+      "silver": 4,
+      "bronze": 3
+    },
+    {
+      "country": "Australia",
+      "code": "AU",
+      "emoji": "🇦🇺",
+      "gold": 3,
+      "silver": 2,
+      "bronze": 1
+    },
+    {
+      "country": "Gran Bretagna",
+      "code": "GB",
+      "emoji": "🇬🇧",
+      "gold": 3,
+      "silver": 1,
+      "bronze": 1
+    },
+    {
+      "country": "Repubblica Ceca",
+      "code": "CZ",
+      "emoji": "🇨🇿",
+      "gold": 2,
+      "silver": 2,
+      "bronze": 1
+    },
+    {
+      "country": "Slovenia",
+      "code": "SI",
+      "emoji": "🇸🇮",
+      "gold": 2,
+      "silver": 1,
+      "bronze": 1
+    },
+    {
+      "country": "Spagna",
+      "code": "ES",
+      "emoji": "🇪🇸",
+      "gold": 1,
+      "silver": 0,
+      "bronze": 2
+    },
+    {
+      "country": "Brasile",
+      "code": "BR",
+      "emoji": "🇧🇷",
+      "gold": 1,
+      "silver": 0,
+      "bronze": 2
+    },
+    {
+      "country": "Kazakhstan",
+      "code": "KZ",
+      "emoji": "🇰🇿",
+      "gold": 1,
+      "silver": 0,
+      "bronze": 0
+    },
+    {
+      "country": "Polonia",
+      "code": "PL",
+      "emoji": "🇵🇱",
+      "gold": 0,
+      "silver": 3,
+      "bronze": 1
+    },
+    {
+      "country": "Nuova Zelanda",
+      "code": "NZ",
+      "emoji": "🇳🇿",
+      "gold": 0,
+      "silver": 2,
+      "bronze": 1
+    },
+    {
+      "country": "Lettonia",
+      "code": "LV",
+      "emoji": "🇱🇻",
+      "gold": 0,
+      "silver": 1,
+      "bronze": 1
+    },
+    {
+      "country": "Georgia",
+      "code": "GE",
+      "emoji": "🇬🇪",
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0
+    },
+    {
+      "country": "Finlandia",
+      "code": "FI",
+      "emoji": "🇫🇮",
+      "gold": 0,
+      "silver": 1,
+      "bronze": 4
+    },
+    {
+      "country": "Danimarca",
+      "code": "DK",
+      "emoji": "🇩🇰",
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0
+    },
+    {
+      "country": "Estonia",
+      "code": "EE",
+      "emoji": "🇪🇪",
+      "gold": 0,
+      "silver": 1,
+      "bronze": 0
+    },
+    {
+      "country": "Bulgaria",
+      "code": "BG",
+      "emoji": "🇧🇬",
+      "gold": 0,
+      "silver": 0,
+      "bronze": 2
+    },
+    {
+      "country": "Belgio",
+      "code": "BE",
+      "emoji": "🇧🇪",
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1
+    }
   ]
 }
