@@ -382,16 +382,51 @@ footer {
 footer a { color: var(--accent2); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 
-/* ── RESPONSIVE ──────────────────────────── */
+
+
+/* ── RESPONSIVE MOBILE FIX ───────────────── */
 @media (max-width: 640px) {
+  /* Colonne compatte: tutte visibili senza scroll */
   .table-head, .row {
-    grid-template-columns: 36px 1fr 54px 54px 54px 54px;
-    padding: 11px 12px;
-    font-size: 0.8rem;
+    grid-template-columns: 28px 1fr 38px 38px 38px 38px;
+    padding: 9px 8px;
+    font-size: 0.75rem;
   }
-  .search-input { width: 150px; }
+
+  /* Nascondi barra medaglie per risparmiare spazio */
+  .medal-bar { display: none; }
+
+  /* Bandiera più piccola */
+  .flag-img { width: 26px; height: 18px; }
+
+  /* Nome paese troncato se troppo lungo */
+  .country-name {
+    font-size: 0.78rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 110px;
+    display: block;
+  }
+  .country-emoji { font-size: 0.85rem; }
+  .country-code  { font-size: 0.58rem; }
+
+  /* Colonne medaglia */
+  .col-medal, .col-total { font-size: 0.8rem; padding: 0 1px; }
+  .col-rank { font-size: 0.9rem; }
+
+  /* Search a larghezza piena */
+  .search-input { width: 100%; }
   .search-wrap  { margin-left: 0; width: 100%; }
-  .controls     { gap: 6px; }
-  .flag-img     { width: 30px; height: 20px; }
-  h1            { letter-spacing: 2px; }
+  .controls     { gap: 5px; }
+  .sort-btn     { padding: 6px 10px; font-size: 0.72rem; }
+
+  h1 { letter-spacing: 2px; }
+
+  /* Summary cards */
+  .summary     { gap: 8px; }
+  .card        { padding: 12px 6px; }
+  .card .icon  { font-size: 1.3rem; }
+  .card .count { font-size: 1.8rem; }
+  .card .label { font-size: 0.56rem; letter-spacing: 1px; }
 }
