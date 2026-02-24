@@ -8,7 +8,7 @@ const DATA_URL = './data.json';
 // ── STATE ──────────────────────────────────
 let state = {
   nations: [],
-  sort: 'gold',    // 'total' | 'gold' | 'silver' | 'bronze' | 'alpha'
+  sort: 'gold',   // default: oro
   query: '',
   meta: {}
 };
@@ -29,7 +29,7 @@ async function init() {
     render();
   } catch (e) {
     document.getElementById('table-body').innerHTML =
-      '<div class="no-results">⚠️ Impossibile caricare i dati.</div>';
+      '<div class="no-results">⚠️ Impossibile caricare i dati.<br><small>Aprire il file tramite un server locale (es. Live Server in VS Code).</small></div>';
     console.error(e);
   }
 }
@@ -72,11 +72,11 @@ function sorted(nations) {
   const arr = [...nations];
   switch (state.sort) {
     case 'gold':
-      return arr.sort((a, b) => b.gold - a.gold || b.silver - a.silver || b.bronze - a.bronze || b.total - a.total);
+      return arr.sort((a, b) => b.gold - a.gold || b.silver - a.silver || b.bronze - a.bronze);
     case 'silver':
-      return arr.sort((a, b) => b.silver - a.silver || b.gold - a.gold || b.bronze - a.bronze || b.total - a.total);
+      return arr.sort((a, b) => b.silver - a.silver || b.gold - a.gold || b.bronze - a.bronze);
     case 'bronze':
-      return arr.sort((a, b) => b.bronze - a.bronze || b.gold - a.gold || b.silver - a.silver || b.total - a.total);
+      return arr.sort((a, b) => b.bronze - a.bronze || b.gold - a.gold || b.silver - a.silver);
     case 'alpha':
       return arr.sort((a, b) => a.country.localeCompare(b.country, 'it'));
     default: // total
@@ -90,12 +90,10 @@ function render() {
 
   let list = state.nations;
 
-  // Filter by search
   if (state.query) {
     list = list.filter(n =>
       n.country.toLowerCase().includes(state.query) ||
-      n.code.toLowerCase().includes(state.query) ||
-      (n.emoji && n.emoji.includes(state.query))
+      n.code.toLowerCase().includes(state.query)
     );
   }
 
@@ -115,9 +113,7 @@ function render() {
 function buildRow(n, i, maxTotal) {
   const rank     = i + 1;
   const isPodium = rank <= 3 && !state.query;
-  const isHost   = false; // rimosso highlight speciale per l'Italia
 
-  // Medal bar widths (proportional to maxTotal)
   const scale = 100 / maxTotal;
   const gW = (n.gold   * scale).toFixed(1);
   const sW = (n.silver * scale).toFixed(1);
@@ -128,10 +124,8 @@ function buildRow(n, i, maxTotal) {
     : `<span class="zero">0</span>`;
 
   return `
-  <div class="row${isHost ? ' host-nation' : ''}" style="animation-delay:${Math.min(i * 0.03, 0.6)}s">
-
+  <div class="row" style="animation-delay:${Math.min(i * 0.03, 0.6)}s">
     <div class="col-rank${isPodium ? ' podium' : ''}">${rank}</div>
-
     <div class="col-country">
       <img class="flag-img" src="${n.flagUrl}" alt="${n.country}" loading="lazy"
            onerror="this.style.opacity='0.3'">
@@ -139,7 +133,6 @@ function buildRow(n, i, maxTotal) {
         <div class="country-name">
           <span class="country-emoji">${n.emoji}</span>
           ${n.country}
-          ${isHost ? '<span class="host-badge">🏠 Host</span>' : ''}
         </div>
         <div class="country-meta">
           <span class="country-code">${n.code}</span>
@@ -151,12 +144,10 @@ function buildRow(n, i, maxTotal) {
         </div>
       </div>
     </div>
-
     <div class="col-medal col-g">${medal(n.gold,   'col-g')}</div>
     <div class="col-medal col-s">${medal(n.silver, 'col-s')}</div>
     <div class="col-medal col-b">${medal(n.bronze, 'col-b')}</div>
     <div class="col-total">${n.total > 0 ? n.total : '<span class="zero">0</span>'}</div>
-
   </div>`;
 }
 
