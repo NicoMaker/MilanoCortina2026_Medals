@@ -5,7 +5,7 @@
 // ── STATO ─────────────────────────────────
 const state = {
   nations: [],
-  sort: "gold", // default: oro
+  sort: "gold",
   query: "",
   meta: {},
 };
@@ -27,10 +27,10 @@ async function init() {
 
     renderMeta();
     renderSummary();
-    setSort("gold"); // imposta bottone attivo E renderizza
+    setSort("gold");
   } catch (err) {
     document.getElementById("table-body").innerHTML =
-      '<div class="no-results">⚠️ Apri con un server locale (es. Live Server in VS Code)</div>';
+      '<tr><td colspan="6" class="no-results">⚠️ Apri con un server locale (es. Live Server in VS Code)</td></tr>';
     console.error(err);
   }
 }
@@ -96,7 +96,7 @@ function sorted(list) {
   }
 }
 
-// ── RENDER TABELLA ─────────────────────────
+// ── RENDER ────────────────────────────────
 function render() {
   const maxTotal = Math.max(...state.nations.map((n) => n.total), 1);
 
@@ -112,7 +112,7 @@ function render() {
 
   const body = document.getElementById("table-body");
   if (list.length === 0) {
-    body.innerHTML = '<div class="no-results">Nessuna nazione trovata 🔍</div>';
+    body.innerHTML = '<tr><td colspan="6" class="no-results">Nessuna nazione trovata 🔍</td></tr>';
     return;
   }
   body.innerHTML = list.map((n, i) => buildRow(n, i, maxTotal)).join("");
@@ -127,59 +127,37 @@ function buildRow(n, i, maxTotal) {
   const sW = (n.silver * sc).toFixed(1);
   const bW = (n.bronze * sc).toFixed(1);
 
+  // Rank badge for top 3
+  let rankHtml;
+  if (isPodium) {
+    rankHtml = '<span class="rank-badge rank-' + rank + '">' + rank + '</span>';
+  } else {
+    rankHtml = '<span class="rank-num">' + rank + '</span>';
+  }
+
   const cell = (val, cls) =>
-    '<td class="med-cell ' +
-    cls +
-    '">' +
-    '<span class="med-val">' +
-    (val > 0 ? val : "0") +
-    "</span>" +
-    "</td>";
+    '<td class="med-cell ' + cls + '">' +
+    '<span class="med-val">' + (val > 0 ? val : "0") + '</span>' +
+    '</td>';
 
   return (
-    '<tr class="row' +
-    (isPodium ? " podium-row" : "") +
-    '" style="animation-delay:' +
-    Math.min(i * 0.03, 0.6) +
-    's">' +
-    '<td class="col-rank"><span class="' +
-    (isPodium ? "rank-gold" : "rank-num") +
-    '">' +
-    rank +
-    "</span></td>" +
+    '<tr class="row' + (isPodium ? " podium-row" : "") + '" style="animation-delay:' + Math.min(i * 0.03, 0.6) + 's">' +
+    '<td class="col-rank">' + rankHtml + '</td>' +
     '<td class="col-country">' +
-    '<img class="flag" src="' +
-    n.flagUrl +
-    '" alt="' +
-    n.country +
-    '" loading="lazy" onerror="this.style.opacity=\'0.2\'">' +
-    '<div class="cinfo">' +
-    '<div class="cname">' +
-    n.emoji +
-    " " +
-    n.displayName +
-    "</div>" +
-    '<div class="cmeta">' +
-    '<span class="ccode">' +
-    n.code +
-    "</span>" +
-    '<div class="mbar"><div class="bg" style="width:' +
-    gW +
-    '%"></div><div class="bs" style="width:' +
-    sW +
-    '%"></div><div class="bb" style="width:' +
-    bW +
-    '%"></div></div>' +
-    "</div>" +
-    "</div>" +
-    "</td>" +
+      '<img class="flag" src="' + n.flagUrl + '" alt="' + n.country + '" loading="lazy" onerror="this.style.opacity=\'0.15\'">' +
+      '<div class="cinfo">' +
+        '<div class="cname">' + n.emoji + ' ' + n.displayName + '</div>' +
+        '<div class="cmeta">' +
+          '<span class="ccode">' + n.code + '</span>' +
+          '<div class="mbar"><div class="bg" style="width:' + gW + '%"></div><div class="bs" style="width:' + sW + '%"></div><div class="bb" style="width:' + bW + '%"></div></div>' +
+        '</div>' +
+      '</div>' +
+    '</td>' +
     cell(n.gold, "cg") +
     cell(n.silver, "cs") +
     cell(n.bronze, "cb") +
-    '<td class="col-tot">' +
-    n.total +
-    "</td>" +
-    "</tr>"
+    '<td class="col-tot">' + n.total + '</td>' +
+    '</tr>'
   );
 }
 
