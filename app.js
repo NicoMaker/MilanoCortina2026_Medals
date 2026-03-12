@@ -27,7 +27,7 @@ async function init() {
 
     renderMeta();
     renderSummary();
-    setSort("gold");
+    setSort("gold", true); // true = skip scroll on init
   } catch (err) {
     document.getElementById("table-body").innerHTML =
       '<tr><td colspan="6" class="no-results">⚠️ Apri con un server locale (es. Live Server in VS Code)</td></tr>';
@@ -80,13 +80,13 @@ function scrollToTable() {
 }
 
 // ── SORT ───────────────────────────────────
-function setSort(key) {
+function setSort(key, skipScroll = false) {
   state.sort = key;
   document
     .querySelectorAll(".sort-btn")
     .forEach((b) => b.classList.toggle("active", b.dataset.sort === key));
   render();
-  setTimeout(scrollToTable, 0);
+  if (!skipScroll) setTimeout(scrollToTable, 0);
 }
 
 // ── SEARCH ─────────────────────────────────
