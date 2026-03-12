@@ -54,6 +54,13 @@ function renderSummary() {
   document.getElementById("sum-nations").textContent = state.nations.filter(
     (n) => n.total > 0,
   ).length;
+  // sticky header totals
+  const shg = document.getElementById("sh-gold");
+  const shs = document.getElementById("sh-silver");
+  const shb = document.getElementById("sh-bronze");
+  if (shg) shg.textContent = g;
+  if (shs) shs.textContent = s;
+  if (shb) shb.textContent = b;
 }
 
 // ── SORT ───────────────────────────────────
@@ -160,6 +167,18 @@ function buildRow(n, i, maxTotal) {
     '</tr>'
   );
 }
+
+// ── STICKY HEADER ─────────────────────────
+(function () {
+  const stickyEl = document.getElementById("sticky-header");
+  if (!stickyEl) return;
+  const heroEl = document.querySelector(".hero");
+  const onScroll = () => {
+    const heroBottom = heroEl ? heroEl.getBoundingClientRect().bottom : 200;
+    stickyEl.classList.toggle("visible", heroBottom < 0);
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+})();
 
 // ── AVVIO ──────────────────────────────────
 document.addEventListener("DOMContentLoaded", init);

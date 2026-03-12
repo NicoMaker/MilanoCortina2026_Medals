@@ -13,64 +13,112 @@
 
   <div class="noise-overlay"></div>
 
+  <!-- STICKY HEADER -->
+  <div class="sticky-header" id="sticky-header">
+    <div class="sticky-inner">
+      <div class="sticky-left">
+        <span class="sticky-date-left">Milano Cortina</span>
+      </div>
+      <div class="sticky-center">
+        <svg class="sticky-rings" viewBox="0 0 236 114" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="sclip-blue">   <circle cx="34" cy="38" r="30"/></clipPath>
+            <clipPath id="sclip-yellow"> <circle cx="94" cy="38" r="30"/></clipPath>
+            <clipPath id="sclip-black">  <circle cx="154" cy="38" r="30"/></clipPath>
+            <clipPath id="sclip-red">    <circle cx="64" cy="72" r="30"/></clipPath>
+            <clipPath id="sclip-green">  <circle cx="124" cy="72" r="30"/></clipPath>
+          </defs>
+          <circle cx="34"  cy="38" r="28" stroke="#0081C8" stroke-width="7" fill="none"/>
+          <circle cx="94"  cy="38" r="28" stroke="#FCB131" stroke-width="7" fill="none"/>
+          <circle cx="154" cy="38" r="28" stroke="#111111" stroke-width="7" fill="none"/>
+          <circle cx="64"  cy="72" r="28" stroke="#EE334E" stroke-width="7" fill="none"/>
+          <circle cx="124" cy="72" r="28" stroke="#00A651" stroke-width="7" fill="none"/>
+          <path d="M 34 10 A 28 28 0 0 1 62 72" stroke="#0081C8" stroke-width="7.5" fill="none" clip-path="url(#sclip-blue)"/>
+          <path d="M 66 72 A 28 28 0 0 1 94 10 A 28 28 0 0 1 122 72" stroke="#FCB131" stroke-width="7.5" fill="none" clip-path="url(#sclip-yellow)"/>
+          <path d="M 126 72 A 28 28 0 0 1 154 10" stroke="#111111" stroke-width="7.5" fill="none" clip-path="url(#sclip-black)"/>
+        </svg>
+        <div class="sticky-title">
+          <span class="sticky-main">Medagliere Olimpico</span>
+          <span class="sticky-sub">Milano Cortina 2026</span>
+          <div class="sticky-medals-total" id="sticky-medals">
+            <span class="sticky-medal-item"><span class="sm-emoji">🥇</span><span class="sm-num sm-g" id="sh-gold">—</span></span>
+            <span class="sticky-sep">·</span>
+            <span class="sticky-medal-item"><span class="sm-emoji">🥈</span><span class="sm-num sm-s" id="sh-silver">—</span></span>
+            <span class="sticky-sep">·</span>
+            <span class="sticky-medal-item"><span class="sm-emoji">🥉</span><span class="sm-num sm-b" id="sh-bronze">—</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="sticky-right">
+        <span class="sticky-date-right">6–22 FEB 2026</span>
+      </div>
+    </div>
+  </div>
+
   <header class="hero">
     <div class="hero-glow"></div>
 
-    <nav class="top-bar">
-      <span class="top-title">Milano Cortina 2026</span>
-      <div class="top-date">6–22 FEB</div>
-    </nav>
-
     <div class="hero-content">
-      <div class="year-bg">2026</div>
 
       <!-- 5 cerchi olimpici con effetto interlacciato corretto -->
       <div class="olympic-rings-wrap">
         <svg class="olympic-rings-svg" viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <!-- Clip per far sembrare che i cerchi inferiori passino DIETRO a quelli superiori -->
-            <clipPath id="clip-blue">
-              <circle cx="46" cy="46" r="36"/>
-            </clipPath>
-            <clipPath id="clip-yellow">
-              <circle cx="118" cy="46" r="36"/>
-            </clipPath>
-            <clipPath id="clip-black">
-              <circle cx="190" cy="46" r="36"/>
-            </clipPath>
-            <clipPath id="clip-green">
-              <circle cx="82" cy="80" r="36"/>
-            </clipPath>
-            <clipPath id="clip-red">
-              <circle cx="154" cy="80" r="36"/>
-            </clipPath>
+            <clipPath id="clip-blue">  <circle cx="46"  cy="46" r="36"/></clipPath>
+            <clipPath id="clip-yellow"><circle cx="118" cy="46" r="36"/></clipPath>
+            <clipPath id="clip-black"> <circle cx="190" cy="46" r="36"/></clipPath>
+            <clipPath id="clip-green"> <circle cx="82"  cy="80" r="36"/></clipPath>
+            <clipPath id="clip-red">   <circle cx="154" cy="80" r="36"/></clipPath>
           </defs>
-
-          <!-- Cerchi riga superiore (sotto) -->
           <circle cx="46"  cy="46" r="34" stroke="#0081C8" stroke-width="8" fill="none"/>
           <circle cx="118" cy="46" r="34" stroke="#FCB131" stroke-width="8" fill="none"/>
           <circle cx="190" cy="46" r="34" stroke="#000000" stroke-width="8" fill="none"/>
-
-          <!-- Cerchi riga inferiore (sopra ai superiori) -->
           <circle cx="82"  cy="80" r="34" stroke="#EE334E" stroke-width="8" fill="none"/>
           <circle cx="154" cy="80" r="34" stroke="#00A651" stroke-width="8" fill="none"/>
-
-          <!-- Archi superiori ridisegnati sopra ai cerchi inferiori per creare interleave -->
-          <!-- Blu sopra verde (zona destra del blu) -->
           <path d="M 46 12 A 34 34 0 0 1 80 80" stroke="#0081C8" stroke-width="8.5" fill="none" clip-path="url(#clip-blue)"/>
-          <!-- Giallo sopra verde (zona sinistra giallo) e sopra rosso (zona destra giallo) -->
           <path d="M 84 80 A 34 34 0 0 1 118 12 A 34 34 0 0 1 152 80" stroke="#FCB131" stroke-width="8.5" fill="none" clip-path="url(#clip-yellow)"/>
-          <!-- Nero sopra rosso -->
           <path d="M 156 80 A 34 34 0 0 1 190 12" stroke="#000000" stroke-width="8.5" fill="none" clip-path="url(#clip-black)"/>
         </svg>
       </div>
 
+      <div class="hero-year-label">2026</div>
       <div class="hero-eyebrow">XXV GIOCHI OLIMPICI INVERNALI</div>
       <h1>
         <span class="h1-line1">Medagliere</span>
         <span class="h1-line2">Olimpico</span>
       </h1>
-      <p class="tagline" id="event-meta">Classifica ufficiale · Milano &amp; Cortina d'Ampezzo</p>
+
+      <!-- INFO BAR: Milano Cortina · data · medaglie -->
+      <div class="hero-info-bar">
+        <div class="hero-info-top">
+          <span class="hero-location">Milano &amp; Cortina d'Ampezzo</span>
+          <span class="hero-info-sep">·</span>
+          <span class="hero-date-badge">6–22 Febbraio 2026</span>
+        </div>
+        <div class="hero-medals-row">
+          <div class="hero-medal-pill hg">
+            <span class="hm-emoji">🥇</span>
+            <span class="hm-num" id="sum-gold">—</span>
+            <span class="hm-lbl">Ori</span>
+          </div>
+          <div class="hero-medal-pill hs">
+            <span class="hm-emoji">🥈</span>
+            <span class="hm-num" id="sum-silver">—</span>
+            <span class="hm-lbl">Argenti</span>
+          </div>
+          <div class="hero-medal-pill hb">
+            <span class="hm-emoji">🥉</span>
+            <span class="hm-num" id="sum-bronze">—</span>
+            <span class="hm-lbl">Bronzi</span>
+          </div>
+          <div class="hero-medal-pill hn">
+            <span class="hm-emoji">🌍</span>
+            <span class="hm-num" id="sum-nations">—</span>
+            <span class="hm-lbl">Nazioni</span>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <div class="mountain-deco">
@@ -82,38 +130,6 @@
   </header>
 
   <main class="container">
-
-    <!-- SUMMARY STRIP -->
-    <div class="summary-strip">
-      <div class="stat-pill gold">
-        <div class="pill-medal">🥇</div>
-        <div>
-          <div class="pill-num" id="sum-gold">—</div>
-          <div class="pill-lbl">Ori</div>
-        </div>
-      </div>
-      <div class="stat-pill silver">
-        <div class="pill-medal">🥈</div>
-        <div>
-          <div class="pill-num" id="sum-silver">—</div>
-          <div class="pill-lbl">Argenti</div>
-        </div>
-      </div>
-      <div class="stat-pill bronze">
-        <div class="pill-medal">🥉</div>
-        <div>
-          <div class="pill-num" id="sum-bronze">—</div>
-          <div class="pill-lbl">Bronzi</div>
-        </div>
-      </div>
-      <div class="stat-pill nations">
-        <div class="pill-medal">🌍</div>
-        <div>
-          <div class="pill-num" id="sum-nations">—</div>
-          <div class="pill-lbl">Nazioni</div>
-        </div>
-      </div>
-    </div>
 
     <!-- CONTROLS -->
     <div class="controls">
