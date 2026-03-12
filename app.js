@@ -61,10 +61,12 @@ function renderSummary() {
   const shs = document.getElementById("sh-silver");
   const shb = document.getElementById("sh-bronze");
   const sht = document.getElementById("sh-total");
+  const shn = document.getElementById("sh-nations");
   if (shg) shg.textContent = g;
   if (shs) shs.textContent = s;
   if (shb) shb.textContent = b;
   if (sht) sht.textContent = t;
+  if (shn) shn.textContent = state.nations.filter(n => n.total > 0).length;
 }
 
 // ── SORT ───────────────────────────────────

@@ -49,10 +49,9 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 12px 32px;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 12px;
 }
 
 .sticky-left {
@@ -141,6 +140,16 @@
   text-transform: uppercase;
 }
 
+.sticky-date-center {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.54rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+
 .sticky-medals-total {
   display: flex;
   align-items: center;
@@ -162,6 +171,8 @@
 .sm-g { color: var(--gold); }
 .sm-s { color: var(--silver); }
 .sm-b { color: var(--bronze); }
+.sm-t { color: var(--text); }
+.sm-n { color: var(--accent2); }
 .sticky-sep { color: var(--border2); font-size: 0.8rem; }
 
 @media (max-width: 480px) {
