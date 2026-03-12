@@ -502,13 +502,14 @@ h1 {
 
 .hero-medal-pill {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   background: var(--surf);
   border: 1px solid var(--border2);
   border-radius: 40px;
-  padding: 10px 20px;
-  min-width: 100px;
+  padding: 12px 20px;
+  min-width: 90px;
   justify-content: center;
   transition:
     transform 0.2s,
@@ -544,8 +545,14 @@ h1 {
 .hm-num {
   font-family: "Syne", sans-serif;
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   line-height: 1;
+}
+
+.hm-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .hg .hm-num {
@@ -572,7 +579,7 @@ h1 {
   font-size: 0.58rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--muted);
+  color: var(--text2);
 }
 
 /* MOUNTAIN SVG */

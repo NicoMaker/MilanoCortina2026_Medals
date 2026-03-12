@@ -69,6 +69,19 @@ function renderSummary() {
   if (shn) shn.textContent = state.nations.filter((n) => n.total > 0).length;
 }
 
+// ── SCROLL TO TABLE ────────────────────────
+function scrollToTable() {
+  const tableEl = document.querySelector(".table-outer");
+  if (!tableEl) return;
+  const controlsEl = document.getElementById("controls-bar");
+  const stickyEl = document.getElementById("sticky-header");
+  const offset =
+    (controlsEl ? controlsEl.offsetHeight : 0) +
+    (stickyEl && stickyEl.classList.contains("visible") ? stickyEl.offsetHeight : 0);
+  const top = tableEl.getBoundingClientRect().top + window.scrollY - offset - 8;
+  window.scrollTo({ top, behavior: "smooth" });
+}
+
 // ── SORT ───────────────────────────────────
 function setSort(key) {
   state.sort = key;
@@ -76,12 +89,14 @@ function setSort(key) {
     .querySelectorAll(".sort-btn")
     .forEach((b) => b.classList.toggle("active", b.dataset.sort === key));
   render();
+  scrollToTable();
 }
 
 // ── SEARCH ─────────────────────────────────
 function onSearch(e) {
   state.query = e.target.value.toLowerCase().trim();
   render();
+  scrollToTable();
 }
 
 // ── ORDINAMENTO ────────────────────────────
