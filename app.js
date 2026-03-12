@@ -12,6 +12,10 @@ const state = {
 
 // ── CARICA DATI ────────────────────────────
 async function init() {
+  // Riporta sempre la pagina in cima all'avvio
+  history.scrollRestoration = "manual";
+  window.scrollTo(0, 0);
+
   try {
     const res = await fetch("./data.json");
     if (!res.ok) throw new Error("HTTP " + res.status);
