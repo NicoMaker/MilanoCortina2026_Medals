@@ -71,14 +71,11 @@ function renderSummary() {
 
 // ── SCROLL TO TABLE ────────────────────────
 function scrollToTable() {
-  const tableEl = document.querySelector(".table-outer");
-  if (!tableEl) return;
+  const tableOuter = document.querySelector(".table-outer");
+  if (!tableOuter) return;
   const controlsEl = document.getElementById("controls-bar");
-  const stickyEl = document.getElementById("sticky-header");
-  const offset =
-    (controlsEl ? controlsEl.offsetHeight : 0) +
-    (stickyEl && stickyEl.classList.contains("visible") ? stickyEl.offsetHeight : 0);
-  const top = tableEl.getBoundingClientRect().top + window.scrollY - offset - 8;
+  const offset = (controlsEl ? controlsEl.offsetHeight : 0) + 48;
+  const top = tableOuter.getBoundingClientRect().top + window.scrollY - offset;
   window.scrollTo({ top, behavior: "smooth" });
 }
 
@@ -89,14 +86,14 @@ function setSort(key) {
     .querySelectorAll(".sort-btn")
     .forEach((b) => b.classList.toggle("active", b.dataset.sort === key));
   render();
-  scrollToTable();
+  setTimeout(scrollToTable, 0);
 }
 
 // ── SEARCH ─────────────────────────────────
 function onSearch(e) {
   state.query = e.target.value.toLowerCase().trim();
   render();
-  scrollToTable();
+  setTimeout(scrollToTable, 0);
 }
 
 // ── ORDINAMENTO ────────────────────────────
