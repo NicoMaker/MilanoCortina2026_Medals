@@ -66,7 +66,7 @@ function renderSummary() {
   if (shs) shs.textContent = s;
   if (shb) shb.textContent = b;
   if (sht) sht.textContent = t;
-  if (shn) shn.textContent = state.nations.filter(n => n.total > 0).length;
+  if (shn) shn.textContent = state.nations.filter((n) => n.total > 0).length;
 }
 
 // ── SORT ───────────────────────────────────
@@ -125,7 +125,8 @@ function render() {
 
   const body = document.getElementById("table-body");
   if (list.length === 0) {
-    body.innerHTML = '<tr><td colspan="6" class="no-results">Nessuna nazione trovata 🔍</td></tr>';
+    body.innerHTML =
+      '<tr><td colspan="6" class="no-results">Nessuna nazione trovata 🔍</td></tr>';
     return;
   }
   body.innerHTML = list.map((n, i) => buildRow(n, i, maxTotal)).join("");
@@ -143,47 +144,90 @@ function buildRow(n, i, maxTotal) {
   // Rank badge for top 3
   let rankHtml;
   if (isPodium) {
-    rankHtml = '<span class="rank-badge rank-' + rank + '">' + rank + '</span>';
+    rankHtml = '<span class="rank-badge rank-' + rank + '">' + rank + "</span>";
   } else {
-    rankHtml = '<span class="rank-num">' + rank + '</span>';
+    rankHtml = '<span class="rank-num">' + rank + "</span>";
   }
 
   const cell = (val, cls) =>
-    '<td class="med-cell ' + cls + '">' +
-    '<span class="med-val">' + (val > 0 ? val : "0") + '</span>' +
-    '</td>';
+    '<td class="med-cell ' +
+    cls +
+    '">' +
+    '<span class="med-val">' +
+    (val > 0 ? val : "0") +
+    "</span>" +
+    "</td>";
 
   return (
-    '<tr class="row' + (isPodium ? " podium-row" : "") + '" style="animation-delay:' + Math.min(i * 0.03, 0.6) + 's">' +
-    '<td class="col-rank">' + rankHtml + '</td>' +
+    '<tr class="row' +
+    (isPodium ? " podium-row" : "") +
+    '" style="animation-delay:' +
+    Math.min(i * 0.03, 0.6) +
+    's">' +
+    '<td class="col-rank">' +
+    rankHtml +
+    "</td>" +
     '<td class="col-country">' +
-      '<img class="flag" src="' + n.flagUrl + '" alt="' + n.country + '" loading="lazy" onerror="this.style.opacity=\'0.15\'">' +
-      '<div class="cinfo">' +
-        '<div class="cname">' + n.emoji + ' ' + n.displayName + '</div>' +
-        '<div class="cmeta">' +
-          '<span class="ccode">' + n.code + '</span>' +
-          '<div class="mbar"><div class="bg" style="width:' + gW + '%"></div><div class="bs" style="width:' + sW + '%"></div><div class="bb" style="width:' + bW + '%"></div></div>' +
-        '</div>' +
-      '</div>' +
-    '</td>' +
+    '<img class="flag" src="' +
+    n.flagUrl +
+    '" alt="' +
+    n.country +
+    '" loading="lazy" onerror="this.style.opacity=\'0.15\'">' +
+    '<div class="cinfo">' +
+    '<div class="cname">' +
+    n.emoji +
+    " " +
+    n.displayName +
+    "</div>" +
+    '<div class="cmeta">' +
+    '<span class="ccode">' +
+    n.code +
+    "</span>" +
+    '<div class="mbar"><div class="bg" style="width:' +
+    gW +
+    '%"></div><div class="bs" style="width:' +
+    sW +
+    '%"></div><div class="bb" style="width:' +
+    bW +
+    '%"></div></div>' +
+    "</div>" +
+    "</div>" +
+    "</td>" +
     cell(n.gold, "cg") +
     cell(n.silver, "cs") +
     cell(n.bronze, "cb") +
-    '<td class="col-tot">' + n.total + '</td>' +
-    '</tr>'
+    '<td class="col-tot">' +
+    n.total +
+    "</td>" +
+    "</tr>"
   );
 }
 
-// ── STICKY HEADER ─────────────────────────
+// ── STICKY HEADER + CONTROLS ──────────────
 (function () {
   const stickyEl = document.getElementById("sticky-header");
-  if (!stickyEl) return;
+  const controlsEl = document.getElementById("controls-bar");
+  if (!stickyEl || !controlsEl) return;
   const heroEl = document.querySelector(".hero");
+
+  function updateControlsTop() {
+    const hh = stickyEl.classList.contains("visible")
+      ? stickyEl.offsetHeight
+      : 0;
+    controlsEl.style.top = hh + "px";
+  }
+
   const onScroll = () => {
     const heroBottom = heroEl ? heroEl.getBoundingClientRect().bottom : 200;
+    const wasVisible = stickyEl.classList.contains("visible");
     stickyEl.classList.toggle("visible", heroBottom < 0);
+    if (wasVisible !== stickyEl.classList.contains("visible")) {
+      updateControlsTop();
+    }
   };
+
   window.addEventListener("scroll", onScroll, { passive: true });
+  updateControlsTop();
 })();
 
 // ── AVVIO ──────────────────────────────────
