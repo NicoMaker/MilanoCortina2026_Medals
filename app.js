@@ -48,9 +48,11 @@ function renderSummary() {
   const g = state.nations.reduce((a, n) => a + n.gold, 0);
   const s = state.nations.reduce((a, n) => a + n.silver, 0);
   const b = state.nations.reduce((a, n) => a + n.bronze, 0);
+  const t = g + s + b;
   document.getElementById("sum-gold").textContent = g;
   document.getElementById("sum-silver").textContent = s;
   document.getElementById("sum-bronze").textContent = b;
+  document.getElementById("sum-total").textContent = t;
   document.getElementById("sum-nations").textContent = state.nations.filter(
     (n) => n.total > 0,
   ).length;
@@ -58,9 +60,11 @@ function renderSummary() {
   const shg = document.getElementById("sh-gold");
   const shs = document.getElementById("sh-silver");
   const shb = document.getElementById("sh-bronze");
+  const sht = document.getElementById("sh-total");
   if (shg) shg.textContent = g;
   if (shs) shs.textContent = s;
   if (shb) shb.textContent = b;
+  if (sht) sht.textContent = t;
 }
 
 // ── SORT ───────────────────────────────────

@@ -48,7 +48,7 @@
 .sticky-inner {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 7px 24px;
+  padding: 12px 32px;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
@@ -70,7 +70,7 @@
 .sticky-date-left,
 .sticky-date-right {
   font-family: 'Space Mono', monospace;
-  font-size: 0.58rem;
+  font-size: 0.66rem;
   color: var(--muted);
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -79,28 +79,28 @@
 .sticky-date-left {
   color: var(--accent2);
   font-weight: 700;
-  font-size: 0.6rem;
+  font-size: 0.68rem;
 }
 
 .sticky-date-right {
   color: var(--gold);
   font-weight: 700;
-  font-size: 0.6rem;
+  font-size: 0.68rem;
   background: rgba(245,200,66,0.08);
   border: 1px solid rgba(245,200,66,0.2);
   border-radius: 20px;
-  padding: 3px 10px;
+  padding: 5px 14px;
 }
 
 .sticky-center {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
 }
 
 .sticky-rings {
-  width: 72px;
+  width: 80px;
   height: auto;
   flex-shrink: 0;
   filter: drop-shadow(0 2px 8px rgba(0,0,0,0.7));
@@ -111,13 +111,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1px;
+  gap: 2px;
+}
+
+.sticky-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.5rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  line-height: 1;
+  margin-bottom: 1px;
 }
 
 .sticky-main {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: 0.92rem;
+  font-size: 1.1rem;
   color: var(--text);
   letter-spacing: -0.3px;
   line-height: 1;
@@ -125,19 +135,42 @@
 
 .sticky-sub {
   font-family: 'Space Mono', monospace;
-  font-size: 0.5rem;
+  font-size: 0.56rem;
   color: var(--accent2);
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
 }
+
+.sticky-medals-total {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+}
+
+.sticky-medal-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sticky-medal-item .sm-emoji { font-size: 0.85rem; line-height: 1; }
+.sticky-medal-item .sm-num  { font-weight: 700; font-size: 0.78rem; }
+.sm-g { color: var(--gold); }
+.sm-s { color: var(--silver); }
+.sm-b { color: var(--bronze); }
+.sticky-sep { color: var(--border2); font-size: 0.8rem; }
 
 @media (max-width: 480px) {
   .sticky-left { display: none; }
   .sticky-right { display: flex; }
-  .sticky-inner { 
+  .sticky-inner {
     grid-template-columns: 1fr auto;
     gap: 8px;
-    padding: 6px 14px;
+    padding: 8px 14px;
   }
   .sticky-center {
     flex-direction: row;
@@ -151,37 +184,16 @@
     justify-content: flex-end;
     align-self: center;
   }
-  .sticky-rings { width: 38px; }
+  .sticky-rings { width: 40px; }
   .sticky-title { align-items: flex-start; }
-  .sticky-main { font-size: 0.72rem; }
-  .sticky-sub { font-size: 0.42rem; }
-  .sticky-date-right { font-size: 0.5rem; padding: 2px 7px; letter-spacing: 1px; }
-  .sticky-medals-total { font-size: 0.58rem; gap: 4px; margin-top: 2px; }
-  .sticky-medal-item .sm-emoji { font-size: 0.65rem; }
+  .sticky-eyebrow { font-size: 0.38rem; letter-spacing: 2px; }
+  .sticky-main { font-size: 0.78rem; }
+  .sticky-sub { font-size: 0.4rem; letter-spacing: 2px; }
+  .sticky-date-right { font-size: 0.52rem; padding: 3px 8px; letter-spacing: 1px; }
+  .sticky-medals-total { font-size: 0.6rem; gap: 5px; margin-top: 2px; }
+  .sticky-medal-item .sm-emoji { font-size: 0.68rem; }
+  .sticky-medal-item .sm-num { font-size: 0.64rem; }
 }
-
-.sticky-medals-total {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 3px;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 1px;
-}
-
-.sticky-medal-item {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-}
-
-.sticky-medal-item .sm-emoji { font-size: 0.75rem; line-height: 1; }
-.sticky-medal-item .sm-num  { font-weight: 700; }
-.sm-g { color: var(--gold); }
-.sm-s { color: var(--silver); }
-.sm-b { color: var(--bronze); }
-.sticky-sep { color: var(--border2); }
 
 
 .hero-year-label {
@@ -426,6 +438,7 @@ h1 {
 .hero-medal-pill.hs { border-color: rgba(200,214,229,0.2); }
 .hero-medal-pill.hb { border-color: rgba(212,132,90,0.25); }
 .hero-medal-pill.hn { border-color: rgba(122,162,247,0.2); }
+.hero-medal-pill.ht { border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.04); }
 
 .hm-emoji { font-size: 1.2rem; line-height: 1; }
 
@@ -440,6 +453,8 @@ h1 {
 .hs .hm-num { color: var(--silver); }
 .hb .hm-num { color: var(--bronze); }
 .hn .hm-num { color: var(--accent2); }
+.ht .hm-num { color: var(--text); }
+.sm-t       { color: var(--text); }
 
 .hm-lbl {
   font-family: 'Inter', sans-serif;
